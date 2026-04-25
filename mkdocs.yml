@@ -1,0 +1,127 @@
+site_name: BIM 交付指南 · 写作工作台
+site_description: 面向中国工程实践、对接国际体系的 BIM 交付指南，约 30 万字
+site_author: 项目组
+docs_dir: docs
+site_dir: outputs/site
+use_directory_urls: false   # 让带中文的 .md 文件在本地直接可用
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/git-alt
+
+extra:
+  generator: false
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - git-revision-date-localized:
+      type: iso_datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      fallback_to_build_date: true
+      enable_creation_date: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "¶"
+      toc_depth: 4
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+
+nav:
+  - 项目仪表盘: index.md
+  - 大纲与规划:
+      - 19 章重排版大纲: 00_outline_annotated.md
+      - 字数规划（30 万字）: 02_chapter_wordcount_plan.md
+      - 9 章实施大纲（GEMINI 体系）: GEMINI/Chapter_Outline.md
+  - GEMINI 章节草稿（主线）:
+      - 第 1 章 综述: GEMINI/01_General_Provisions.md
+      - 第 2 章 技术基础: GEMINI/02_Technical_Foundations.md
+      - 第 3 章 信息组织: GEMINI/03_Information_Organization.md
+      - 第 4 章 信息交付（最新版 04X）: GEMINI/04X_Delivery_Processes.md
+      - 第 4 章 信息交付（旧版骨架）: GEMINI/04_Delivery_Processes.md
+      - 第 5 章 实施指南（最新版 05X）: GEMINI/05X_Delivery_Implementation.md
+      - 第 5 章 实施策略（旧版骨架）: GEMINI/05_Implementation_Strategy.md
+      - 第 5 章 方案设计（占位）: GEMINI/05_Schematic_Design.md
+      - 第 6 章 施工图设计（占位）: GEMINI/06_Construction_Documents.md
+      - 第 7 章 施工执行（占位）: GEMINI/07_Construction_Execution.md
+      - 第 8 章 竣工移交（占位）: GEMINI/08_Handover_Assets.md
+      - 第 9 章 运营维护（占位）: GEMINI/09_OM_Stage.md
+  - 支撑材料:
+      - 证据台账（Evidence Ledger）: GEMINI/Evidence_Ledger.md
+      - 术语表（Terminology）: GEMINI/Terminology.md
+  - 早期 5 章草稿（对照备查）:
+      - 第 1 章 编制背景与现实问题: chapters/01_编制背景与现实问题.md
+      - 第 2 章 国内外发展趋势与中国实践方向: chapters/02_国内外发展趋势与中国实践方向.md
+      - 第 3 章 BIM 交付的基本观念: chapters/03_BIM交付的基本观念.md
+      - 第 4 章 核心术语与概念边界: chapters/04_核心术语与概念边界.md
+      - 第 5 章 交付目标与质量要求: chapters/05_交付目标与质量要求.md
+
+exclude_docs: |
+  GEMINI/backup/
+  GEMINI/older-version/
+  archive/
+  .DS_Store
+  README.md

@@ -6,3 +6,6 @@ __pycache__/
 .env
 venv/
 .venv/
+
+# MkDocs 构建产物（make build 输出）
+outputs/site/
