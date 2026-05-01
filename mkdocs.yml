@@ -102,7 +102,8 @@ nav:
   - GEMINI 章节草稿（主线）:
       - 第 1 章 综述: GEMINI/01_General_Provisions.md
       - 第 2 章 技术基础: GEMINI/02_Technical_Foundations.md
-      - 第 3 章 信息组织: GEMINI/03_Information_Organization.md
+      - 第 3 章 信息组织（最新版 03X）: GEMINI/03X_Information_Organization.md
+      - 第 3 章 信息组织（旧版）: GEMINI/03_Information_Organization.md
       - 第 4 章 信息交付（最新版 04X）: GEMINI/04X_Delivery_Processes.md
       - 第 4 章 信息交付（旧版骨架）: GEMINI/04_Delivery_Processes.md
       - 第 5 章 实施指南（最新版 05X）: GEMINI/05X_Delivery_Implementation.md
