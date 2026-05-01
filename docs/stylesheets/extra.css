@@ -1,0 +1,268 @@
+/* =======================================================================
+   BIM 交付指南 · 护眼配色与中文排版优化
+   设计原则：暖亚麻底 + 冷海军蓝字（互补）+ 同色系顶栏 + 卡片层次
+   ======================================================================= */
+
+
+/* ==================== 浅色模式：暖亚麻 + 海军蓝 ==================== */
+[data-md-color-scheme="default"] {
+  /* 主背景与表面：更深的暖亚麻 */
+  --md-default-bg-color:           #E8DFC9;   /* 暖亚麻，主背景 */
+  --md-default-bg-color--light:    #ECE4D2;
+  --md-default-bg-color--lighter:  #F0E9DB;
+  --md-default-bg-color--lightest: #F5EFE3;
+
+  /* 文字层级：冷调深海军蓝（与暖底互补）*/
+  --md-default-fg-color:           #26334A;   /* 主文字色 */
+  --md-default-fg-color--light:    #455369;
+  --md-default-fg-color--lighter:  #6F7B90;
+  --md-default-fg-color--lightest: #B8B0A0;
+
+  --md-typeset-color:              #26334A;
+  --md-typeset-a-color:            #3F5878;   /* 雾蓝链接 */
+
+  /* 代码块：比正文背景略深的米色 */
+  --md-code-bg-color:              #DDD2BA;
+  --md-code-fg-color:              #455369;
+
+  /* Admonition / Note */
+  --md-admonition-bg-color:        #EFE6D2;
+  --md-admonition-fg-color:        #26334A;
+
+  /* 顶栏与底栏：同色系仅略深，无对比 bar */
+  --md-primary-fg-color:           #D8CDB6;
+  --md-primary-fg-color--light:    #DDD2BA;
+  --md-primary-fg-color--dark:     #C9BDA1;
+  --md-primary-bg-color:           #26334A;   /* 顶栏文字 */
+  --md-primary-bg-color--light:    #455369;
+
+  --md-footer-bg-color:            #C9BDA1;
+  --md-footer-bg-color--dark:      #B8AC92;
+  --md-footer-fg-color:            #26334A;
+}
+
+
+/* ==================== 深色模式：暖石板 ==================== */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:           #1F2128;   /* 暖深石板，非纯黑 */
+  --md-default-bg-color--light:    #25272F;
+  --md-default-bg-color--lighter:  #2B2D36;
+  --md-default-bg-color--lightest: #32353F;
+
+  --md-default-fg-color:           #D6D3CD;   /* 暖米白文字 */
+  --md-default-fg-color--light:    #B3AFA8;
+  --md-default-fg-color--lighter:  #8E8A82;
+  --md-default-fg-color--lightest: #5C5852;
+
+  --md-typeset-color:              #D6D3CD;
+  --md-typeset-a-color:            #8FA8C7;
+
+  --md-code-bg-color:              #2A2C34;
+  --md-code-fg-color:              #D6D3CD;
+
+  --md-admonition-bg-color:        #25272F;
+  --md-admonition-fg-color:        #D6D3CD;
+
+  --md-primary-fg-color:           #2A2D38;
+  --md-primary-bg-color:           #D6D3CD;
+
+  --md-footer-bg-color:            #1A1C22;
+  --md-footer-fg-color:            #B3AFA8;
+}
+
+
+/* ==================== 中文排版优化 ==================== */
+
+.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--md-typeset-color);
+}
+
+.md-typeset p {
+  margin-block: 0.85em;
+}
+
+/* 正文最大宽度 */
+.md-content__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+/* 标题 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h1 {
+  font-size: 1.95em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-top: 0.6em;
+  margin-bottom: 0.8em;
+}
+
+.md-typeset h2 {
+  font-size: 1.45em;
+  margin-top: 1.6em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.25em;
+}
+
+.md-typeset h3 {
+  font-size: 1.18em;
+  margin-top: 1.3em;
+}
+
+
+/* ==================== 行内代码与代码块 ==================== */
+
+.md-typeset code {
+  font-size: 0.88em;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  background-color: var(--md-code-bg-color);
+}
+
+.md-typeset pre > code {
+  border-radius: 6px;
+  padding: 0.9em 1em;
+  font-size: 0.85em;
+  line-height: 1.6;
+  box-shadow: 0 1px 3px rgba(38, 51, 74, 0.06);
+}
+
+
+/* ==================== 链接 ==================== */
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--md-default-fg-color--lighter);
+  color: var(--md-typeset-a-color);
+}
+
+.md-typeset a:hover {
+  text-decoration-color: var(--md-typeset-a-color);
+}
+
+
+/* ==================== Admonition (注解块) ==================== */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 6px;
+  border-left-width: 3px;
+  font-size: 0.85em;
+  line-height: 1.75;
+  box-shadow: 0 1px 3px rgba(38, 51, 74, 0.05);
+}
+
+
+/* ==================== 表格：卡片化 + 微阴影 ==================== */
+
+.md-typeset table:not([class]) {
+  font-size: 0.82em;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--md-default-bg-color--lightest);
+  box-shadow: 0 1px 4px rgba(38, 51, 74, 0.06);
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-bg-color--light);
+  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+  font-size: 0.92em;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid rgba(38, 51, 74, 0.06);
+}
+
+
+/* ==================== 引用块 ==================== */
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color--light);
+  padding-left: 1em;
+  margin-block: 1em;
+}
+
+
+/* ==================== 顶栏与导航 ==================== */
+
+[data-md-color-scheme="default"] .md-header {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  box-shadow: 0 1px 0 rgba(38, 51, 74, 0.08);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+  box-shadow: 0 1px 0 rgba(38, 51, 74, 0.06);
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: var(--md-default-bg-color--light);
+  color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: var(--md-default-fg-color--lighter);
+}
+
+
+/* ==================== 侧边栏 ==================== */
+
+[data-md-color-scheme="default"] .md-sidebar {
+  background-color: transparent;
+}
+
+[data-md-color-scheme="default"] .md-nav__title {
+  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+[data-md-color-scheme="default"] .md-nav__link--active {
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+}
+
+
+/* ==================== 卡片化"内容区"（可选层次感）==================== */
+
+[data-md-color-scheme="default"] .md-content {
+  background-color: var(--md-default-bg-color--lightest);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(38, 51, 74, 0.04);
+}
+
+[data-md-color-scheme="default"] .md-content__inner {
+  padding-top: 1.2rem;
+  padding-bottom: 2rem;
+}
+
+
+/* ==================== 滚动条：低对比 ==================== */
+
+* {
+  scrollbar-color: var(--md-default-fg-color--lighter)
+                   var(--md-default-bg-color--light);
+}

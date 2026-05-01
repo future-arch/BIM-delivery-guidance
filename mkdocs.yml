@@ -46,6 +46,9 @@ theme:
 extra:
   generator: false
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - search:
       lang:
