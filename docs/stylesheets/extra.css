@@ -260,6 +260,78 @@
 }
 
 
+/* ==================== Mermaid 图：融入暖亚麻主题 ==================== */
+
+.mermaid {
+  background: transparent !important;
+  text-align: center;
+  margin: 1.6em 0;
+  padding: 0.6em 0;
+  font-family: inherit !important;
+}
+
+/* 居中 SVG，避免左对齐露白 */
+.mermaid svg {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 强制 mermaid 节点文字使用站点字体（覆盖 mermaid 内联样式）*/
+.mermaid foreignObject div,
+.mermaid foreignObject span {
+  font-family: inherit !important;
+  font-size: 0.85em !important;
+  line-height: 1.5 !important;
+}
+
+/* 浅色模式：mermaid 节点用暖石板色，与正文呼应 */
+[data-md-color-scheme="default"] .mermaid .node rect,
+[data-md-color-scheme="default"] .mermaid .node circle,
+[data-md-color-scheme="default"] .mermaid .node ellipse,
+[data-md-color-scheme="default"] .mermaid .node polygon {
+  fill: #ECE3CF !important;
+  stroke: #3F5878 !important;
+  stroke-width: 1.2px !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .node .label,
+[data-md-color-scheme="default"] .mermaid .nodeLabel {
+  color: #26334A !important;
+  fill: #26334A !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .edgePath path,
+[data-md-color-scheme="default"] .mermaid .flowchart-link {
+  stroke: #6F7B90 !important;
+  stroke-width: 1.4px !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .arrowheadPath {
+  fill: #6F7B90 !important;
+  stroke: #6F7B90 !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .edgeLabel {
+  background-color: #F5EFE3 !important;
+  color: #26334A !important;
+  font-size: 0.78em !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .cluster rect {
+  fill: #F0E9DB !important;
+  stroke: #B8AC92 !important;
+  stroke-width: 1px !important;
+  stroke-dasharray: 4 2 !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .cluster .nodeLabel,
+[data-md-color-scheme="default"] .mermaid .cluster text {
+  fill: #6F7B90 !important;
+  font-weight: 600 !important;
+}
+
+
 /* ==================== 滚动条：低对比 ==================== */
 
 * {

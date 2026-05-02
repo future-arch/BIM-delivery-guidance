@@ -1,0 +1,199 @@
+/* =======================================================================
+   项目仪表盘 · 字数可视化区块样式
+   ======================================================================= */
+
+.dashboard-section {
+  margin: 1.5em 0 2.2em 0;
+}
+
+.dashboard-section h2 {
+  border-bottom: none !important;
+  margin-bottom: 1em !important;
+}
+
+/* ---------- 统计卡片（3 列）---------- */
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2em 0 1.6em 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #F5EFE3 0%, #ECE3CF 100%);
+  border: 1px solid rgba(38, 51, 74, 0.08);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(38, 51, 74, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent, #3F5878);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(38, 51, 74, 0.10);
+}
+
+.stat-card .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6F7B90;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.stat-card .value {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #26334A;
+  letter-spacing: 0.01em;
+  font-feature-settings: "tnum";
+  line-height: 1.1;
+}
+
+.stat-card .unit {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #6F7B90;
+  margin-left: 0.3rem;
+}
+
+.stat-card .sub {
+  font-size: 0.72rem;
+  color: #8C8579;
+  margin-top: 0.45rem;
+  line-height: 1.4;
+}
+
+/* ---------- 图表容器 ---------- */
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.2rem;
+  margin: 1.4em 0;
+}
+
+@media (max-width: 800px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  background: #F5EFE3;
+  border: 1px solid rgba(38, 51, 74, 0.08);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(38, 51, 74, 0.05);
+}
+
+.chart-card h3 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #26334A !important;
+  margin: 0 0 0.4rem 0 !important;
+  letter-spacing: 0.01em;
+}
+
+.chart-card .chart-sub {
+  font-size: 0.72rem;
+  color: #6F7B90;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.chart-canvas {
+  width: 100%;
+}
+
+#chapter-chart {
+  height: 480px;
+}
+
+#section-pie {
+  height: 360px;
+}
+
+/* ---------- 进度条（书的总进度）---------- */
+
+.progress-shell {
+  margin: 1.2em 0;
+  background: #F5EFE3;
+  border: 1px solid rgba(38, 51, 74, 0.08);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(38, 51, 74, 0.05);
+}
+
+.progress-track {
+  position: relative;
+  height: 14px;
+  background: #DDD2BA;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 0.7rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3F5878 0%, #5B7AA0 100%);
+  border-radius: 7px;
+  transition: width 800ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: #6F7B90;
+  margin-top: 0.45rem;
+}
+
+.progress-meta .right {
+  color: #26334A;
+  font-weight: 600;
+  font-feature-settings: "tnum";
+}
+
+/* ---------- 深色模式适配 ---------- */
+
+[data-md-color-scheme="slate"] .stat-card,
+[data-md-color-scheme="slate"] .chart-card,
+[data-md-color-scheme="slate"] .progress-shell {
+  background: #25272F;
+  border-color: rgba(214, 211, 205, 0.10);
+}
+
+[data-md-color-scheme="slate"] .stat-card {
+  background: linear-gradient(135deg, #25272F 0%, #2B2D36 100%);
+}
+
+[data-md-color-scheme="slate"] .stat-card .label,
+[data-md-color-scheme="slate"] .chart-card .chart-sub,
+[data-md-color-scheme="slate"] .progress-meta {
+  color: #8E8A82;
+}
+
+[data-md-color-scheme="slate"] .stat-card .value,
+[data-md-color-scheme="slate"] .chart-card h3,
+[data-md-color-scheme="slate"] .progress-meta .right {
+  color: #D6D3CD;
+}
+
+[data-md-color-scheme="slate"] .progress-track {
+  background: #32353F;
+}
